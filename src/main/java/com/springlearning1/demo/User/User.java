@@ -2,13 +2,21 @@ package com.springlearning1.demo.User;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+import org.springframework.lang.NonNull;
+
 public class User {
 
 	private Integer Id;
+	@NonNull
+	@Size(min=2, max=10, message = "Name should be minimum 2 and maximum 10 characters.." )
 	private String name;
+	@Past
 	private Date birthDate;
 
-	public User() {
+	protected User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -17,7 +25,7 @@ public class User {
 		super();
 		Id = id;
 		this.name = name;
-		this.birthDate = birthDate;
+		this.birthDate = date;
 	}
 
 	public Integer getId() {
