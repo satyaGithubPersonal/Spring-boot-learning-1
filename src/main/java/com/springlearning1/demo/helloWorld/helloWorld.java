@@ -29,4 +29,13 @@ public class helloWorld {
 	public HelloWorldBean helloWorldPathVar(@PathVariable String name) {
 		return new HelloWorldBean(String.format( "Hello, %s ", name));
 	}
+	
+	// For localization purpose
+//	To pass the name in URl
+	@GetMapping(path = "/hello-world-internationalized")
+	public String	 helloWorldIntern() {
+		return  "Hello World, Internationalized message" ;
+	}
+	
+	
 }

@@ -2,13 +2,17 @@ package com.springlearning1.demo.User;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.springframework.lang.NonNull;
-
+@Entity
 public class User {
 
+	@javax.persistence.Id
+	@GeneratedValue  
 	private Integer Id;
 	@NonNull
 	@Size(min=2, max=10, message = "Name should be minimum 2 and maximum 10 characters.." )
